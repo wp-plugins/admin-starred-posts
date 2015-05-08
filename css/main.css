@@ -1,0 +1,98 @@
+/* == COMMON ==*/
+
+.ino-star{
+  display:inline-block;
+  text-indent:-1000px;
+  overflow:hidden;
+  text-align:left!important;
+  width:20px;
+  height:20px;
+  font-size:20px;
+  line-height:20px;
+
+  background-repeat:no-repeat;
+  background-position: center middle;
+}
+
+.ino-star:focus{
+  -webkit-box-shadow: 0 0 0 0 #FFFFFF;
+  box-shadow: 0 0 0 0 #FFFFFF;
+}
+
+.ino-star.c0 { background-image:url(../img/0.png); }
+.ino-star.c1 { background-image:url(../img/1.png); }
+.ino-star.c2 { background-image:url(../img/2.png); }
+.ino-star.c3 { background-image:url(../img/3.png); }
+.ino-star.c4 { background-image:url(../img/4.png); }
+.ino-star.c5 { background-image:url(../img/5.png); }
+.ino-star.c6 { background-image:url(../img/6.png); }
+.ino-star.c7 { background-image:url(../img/7.png); }
+.ino-star.c8 { background-image:url(../img/8.png); }
+.ino-star.c9 { background-image:url(../img/9.png); }
+.ino-star.c10{ background-image:url(../img/10.png); }
+.ino-star.c11{ background-image:url(../img/11.png); }
+.ino-star.c12{ background-image:url(../img/12.png); }
+
+
+/* == ADMIN LIST ==*/
+
+.widefat th.column-ino_starred_posts{
+  width:2em;
+}
+
+.column-ino_starred_posts .ino-starred-column-header{
+  display:inline-block;
+  width:20px;
+  height:20px;
+  text-align:left;
+  text-indent:-1000px;
+  overflow:hidden;
+  background-image:url(../img/col.png);
+  font-size:20px;
+  line-height:20px;
+
+  background-repeat:no-repeat;
+  background-position: center middle;
+}
+
+
+/* == SETTINGS ==*/
+
+.ino-stars-disabled,
+.ino-stars-enabled{
+  min-height:30px;
+  line-height:30px;
+  min-width:50%;
+  overflow:hidden;
+  vertical-align:middle;
+}
+
+.ino-stars-list-label{
+  font-weight:bold;
+  display:inline-block;
+  width:100px;
+  min-height:30px;
+  line-height:30px;
+}
+
+.ino-stars-row { margin-top:10px; }
+.ino-stars-connected { display:inline-block; }
+
+.ino-stars-connected .ino-star{
+  cursor:move;
+  margin:0 3px;
+}
+
+.ino-starred-setting-table th{
+  width:30%;
+}
+
+.ino-starred-setting-table th,
+.ino-starred-setting-table td{
+  padding:0 0 15px;
+}
+
+.ino-starred-settings-footer{
+  font-style:italic;
+  color:#777;
+}
