@@ -69,8 +69,11 @@ class Ino_Starred_Stars {
 
     public static function get_star_by_id( $id ){
 
-      if( !function_exists( 'array_column' ) ){
-
+      //this is available for php >= 5.5
+      if( function_exists( 'array_column' ) ){
+        $idx = array_search( (int)$id, array_column( self::$stars, 'id' ) );
+        return self::$stars[ $idx ];
+      //for everyone else
       }else{
         foreach( self::$stars as $key => $val ){
           if( $val['id'] === (int)$id ){

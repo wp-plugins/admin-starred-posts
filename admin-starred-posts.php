@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Admin Starred Posts
- * Version:           1.0
+ * Version:           1.0.1
  * Description: 			This plugin allows the administrators/editors/authors to mark posts with different star styles
  * Author: 						Luis Orozco
  * Author URI: 				http://innocuo.com
@@ -12,7 +12,7 @@
 defined( 'ABSPATH' ) or die( '' );
 
 if(!defined('INO_STARRED_POSTS_VERSION')){
-	define('INO_STARRED_POSTS_VERSION', '1.0');
+	define('INO_STARRED_POSTS_VERSION', '1.0.1');
 }
 
 //required classes

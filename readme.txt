@@ -3,7 +3,7 @@ Contributors: innocuo
 Tags: bookmarks, admin, stars, highlight, posts, gmail, productivity
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2
 
 Mark posts, pages and custom posts in your Wordpress admin; pretty similar to how stars in Gmail work.
@@ -56,6 +56,9 @@ any changes.
 
 == Changelog ==
 
+= 1.0.1 =
+* Uses array_column, if available, for searching in star array
+
 = 1.0 =
 * Added star names. It's more user friendly when filtering
 * Added a class for star info. This will help to add more custom stars
@@ -64,6 +67,9 @@ any changes.
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+small fixes in star names
 
 = 1.0 =
 Added user friendly star names.
