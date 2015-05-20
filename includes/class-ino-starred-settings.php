@@ -126,24 +126,26 @@ class Ino_Starred_Settings
 
     public function do_field_enabled_stars(){
 
-      $max_num       = 12;
+      $stars       = Ino_Starred_Stars::get_stars();
       $ids           = $this->get_ids_list();
-      $item_template = '<div id="star_%1$d" class="ino-star c%1$d" title="star %1$d"></div>';
+      $item_template = '<div id="star_%1$d" class="ino-star c%1$d" title="%2$s"></div>';
       $enabled       = array_fill( 0, count( $ids ), null );
       $disabled      = array();
 
-      for( $i = 1; $i <= $max_num; $i++ ){
-        $item = sprintf( $item_template, $i );
-        $enabled_idx = array_search( $i, $ids );
+      for( $i = 0; $i < count( $stars ); $i++ ){
+        $star = $stars[ $i ];
+        $item = sprintf( $item_template, $star['id'], $star['label'] );
+        $enabled_idx = array_search( $star['id'], $ids );
 
         if( $enabled_idx !== false ){
-          $enabled[$enabled_idx] = $item;
+          $enabled[ $enabled_idx ] = $item;
         }else{
           $disabled[] = $item;
         }
       }
       ?>
-      <strong>Drag the stars between the lists.</strong>  The stars will rotate in the order shown below when you click successively.
+      <strong>Drag the stars between the lists.</strong>  The stars will rotate in the order shown below when you click successively.<br>
+      To learn the name of a star, hover your mouse over the image.
       <div class="ino-stars-row">
         <div class="ino-stars-list-label">In Use</div>
         <div class="ino-stars-enabled ino-stars-connected">

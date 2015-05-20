@@ -3,7 +3,7 @@ Contributors: innocuo
 Tags: bookmarks, admin, stars, highlight, posts, gmail, productivity
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 0.9
+Stable tag: 1.0
 License: GPLv2
 
 Mark posts, pages and custom posts in your Wordpress admin; pretty similar to how stars in Gmail work.
@@ -41,7 +41,8 @@ The plugin works out of the box, but you also get some configuration options to 
 
 == Frequently Asked Questions ==
 
-* Admin Starred Posts plugin is activated, but I don't see any stars in my posts list *
+**Admin Starred Posts plugin is activated, but I don't see any stars in my posts list**
+
 First make sure the feature is enabled for the post type you want to use. You can set this in Settings>Starred Posts.
 
 You can also check if the Stars column is enabled in the post list. Go to "All Posts" in your admin, and click on "Screen Options" on
@@ -55,5 +56,14 @@ any changes.
 
 == Changelog ==
 
+= 1.0 =
+* Added star names. It's more user friendly when filtering
+* Added a class for star info. This will help to add more custom stars
+
 = 0.9 =
-Initial release
+* Initial release
+
+== Upgrade Notice ==
+
+= 1.0 =
+Added user friendly star names.

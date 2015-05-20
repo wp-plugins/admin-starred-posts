@@ -16,6 +16,12 @@
         function( result ){
           if( typeof result.val !== 'undefined' ){
             $link.attr( 'class', 'ino-star c'+result.val );
+
+            if( result.label ){
+              $link.attr( 'title', 'starred with \'' + result.label + '\'' )
+            }else{
+              $link.attr( 'title', '');
+            }
           }
 
           $link.fadeIn( 30 );

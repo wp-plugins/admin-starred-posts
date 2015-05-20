@@ -129,14 +129,19 @@ class Ino_Starred_Posts {
       case 'ino_starred_posts':
         $this->set_options();
 
-        $item_template = '<a href="#" class="ino-star-clickable ino-star c%d" data-post_id="%d" tabindex="-1">*</a>';
+        $item_template = '<a href="#" class="ino-star-clickable ino-star c%d" data-post_id="%d" tabindex="-1" title="%s">*</a>';
         $field_name    = $this->get_field_name();
 
         $star = get_post_meta( $post_id, $field_name, true );
         if( empty( $star ) ){
           $star = 0;
+          $star_label = '';
+        }else{
+          $star_info  = Ino_Starred_Stars::get_star_by_id( $star );
+          $star_label = ( $star_info == null )? 'star ' . $star : $star_info['label'];
+          $star_label = 'starred with \'' . $star_label . '\'';
         }
-        printf($item_template, $star, $post_id);
+        printf($item_template, $star, $post_id, $star_label);
       break;
     }
   }
@@ -177,9 +182,12 @@ class Ino_Starred_Posts {
       }
     }
 
+    $star_info = Ino_Starred_Stars::get_star_by_id( $star );
+    $star_label = ( $star_info == null )? '' : $star_info['label'];
+
     update_post_meta($post_id, $field_name, $star);
 
-    echo json_encode( array( 'val' => $star ) );
+    echo json_encode( array( 'val' => $star, 'label' => $star_label ) );
     exit;
   }
 
@@ -197,8 +205,11 @@ class Ino_Starred_Posts {
     echo '<option value="">All Stars</option>';
 
     foreach( $ids as $id ){
-      $selected = ( $id == $selected_item ) ? 'selected' : '';
-      $item = sprintf( $item_template, $id, $selected, 'Star '.$id );
+      $star_info  = Ino_Starred_Stars::get_star_by_id( $id );
+      $star_label = ( $star_info == null )? 'star ' . $id : $star_info['label'];
+
+      $selected   = ( $id == $selected_item ) ? 'selected' : '';
+      $item       = sprintf( $item_template, $id, $selected, $star_label );
       echo $item;
     }
 
